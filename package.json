@@ -10,16 +10,24 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint-staged": "lint-staged - config .lintstagedrc",
+    "commit": "czg",
+    "commitlint": "commitlint",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "latest",
+    "@commitlint/cli": "^17.4.2",
+    "commitlint-config-gitmoji": "^2.2.10",
+    "czg": "^1.4.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.24.3"
 }
