@@ -1,0 +1,121 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+Layout/LineLength:
+  Max: 150
+  Exclude:
+    - "Rakefile"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+Metrics/AbcSize:
+  Max: 50
+Metrics/PerceivedComplexity:
+  Max: 8
+Metrics/CyclomaticComplexity:
+  Max: 7
+Metrics/MethodLength:
+  Max: 30
+Metrics/BlockNesting:
+  Max: 5
+Metrics/ClassLength:
+  Max: 125
+RSpec/ExampleLength:
+  Max: 25
+Style/ExponentialNotation:
+  Enabled: false
+Style/OpenStructUse:
+  Enabled: false
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Style/AsciiComments:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: true
+Style/GlobalVars:
+  Enabled: true
+Style/ClassVars:
+  Enabled: true
+Lint/MissingSuper:
+  Enabled: true
+Lint/SymbolConversion:
+  Enabled: false
+Lint/EmptyBlock:
+  Enabled: true
+Lint/OrAssignmentToConstant:
+  Enabled: true
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - '**/routes.rb'
+    - 'config/environments/*'
+    - db/schema.rb
+Metrics/ModuleLength:
+  Enabled: true
+Rails/ApplicationController:
+  Enabled: true
+Rails/CompactBlank:
+  Enabled: false
+Rails/EnvironmentVariableAccess:
+  Enabled: false
+Rails/TimeZoneAssignment:
+  Enabled: false
+Rails/RedundantPresenceValidationOnBelongsTo:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - 'config/application.rb'
+Style/MapToHash:
+  Enabled: false
+RSpec/NestedGroups:
+  Enabled: true
+  Max: 4
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/StubbedMock:
+  Enabled: false
+RSpec/FactoryBot/SyntaxMethods:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+Style/GuardClause:
+  Enabled: true
+Rails/ReversibleMigration:
+  Enabled: true
+Rails/BulkChangeTable:
+  Enabled: true
+Rails/UniqueValidationWithoutIndex:
+  Enabled: true
+Rails/RenderInline:
+  Enabled: true
+Performance/CollectionLiteralInLoop:
+  Enabled: true
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Max: 12
+Naming/MethodParameterName:
+  MinNameLength: 1
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'public/**/*'
+    - 'config/initializers/bot.rb'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+    - 'config/environments/**/*'
+    - 'tmp/**/*'
+    - 'storage/**/*'
