@@ -15,7 +15,9 @@
     "commit": "czg",
     "commitlint": "commitlint",
     "prepare": "husky install",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "api": "docker compose -f apps/api/compose.yaml --env-file .env.local up",
+    "api:build": "docker compose -f apps/api/compose.yaml --env-file .env.local build"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

@@ -42,6 +42,10 @@ COPY --from=build /rails /rails
 ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_SERVE_STATIC_FILES="true"
 
+# Update gem
+RUN gem update --system
+RUN gem install railties
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 

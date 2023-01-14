@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  api:
+    tty: true
+    build: .
+    container_name: 'rails-api'
+    volumes:
+      - .:/rails
+      - app-storage:/rails/storage
+    command: bash -c "rm -f /tmp/pids/server.pid && rails s -b '0.0.0.0'"
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
+    environment:
+      - RAILS_ENV=${RAILS_ENV}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+  db:
+    container_name: 'rails-db'
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    command:
+      "postgres -c 'max_connections=500'"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data: {}
+  app-storage: {}
