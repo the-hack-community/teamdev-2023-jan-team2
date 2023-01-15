@@ -18,7 +18,8 @@
     "preinstall": "npx only-allow pnpm",
     "api": "docker compose -f apps/api/compose.yaml --env-file .env.local up",
     "api:build": "docker compose -f apps/api/compose.yaml --env-file .env.local build",
-    "api:lint": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop -A"
+    "api:lint": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop -A",
+    "api:fix": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop --server -A --fail-level E"
   },
   "devDependencies": {
     "@ca11-ope/config": "workspace:*",
