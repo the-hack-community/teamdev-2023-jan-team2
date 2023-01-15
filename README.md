@@ -1,73 +1,44 @@
-# Turborepo starter
+![project logo](apps/web/src/assets/logo.svg)
 
-This is an official pnpm starter turborepo.
+![Next.js Badge](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&&style=flat)
+![TurboRepo Badge](https://img.shields.io/badge/Turborepo-EF4444?logo=turborepo&logoColor=fff&&style=flat)
+![Rails Badge](https://img.shields.io/badge/Ruby%20on%20Rails-CC0000?logo=RubyonRails&logoColor=fff&&style=flat)
+![Storybook Badge](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=fff&&style=flat)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&&style=flat)
+![Figma Badge](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=fff&&style=flat)
+![pnpm Badge](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=fff&&style=flat)
 
-## What's inside?
+- [About Project](#about-project-img-srchttpsemojipedia-uss3dualstackus-west-1amazonawscomthumbs240twitter322shibuyae50apng-altsauropod-styleheight1emwidth1emmargin0-005em-0-01emvertical-align-01em)
+- [Quick Start](#quick-start-img-srchttpsemojipedia-uss3amazonawscomsourcemicrosoft-teams337sauropod1f995png-altsauropod-styleheight1emwidth1emmargin0-005em-0-01emvertical-align-01em)
+  - [Environment](#environment)
+  - [Set environment variables](#set-environment-variables)
+  - [Boot development](#boot-development)
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+## About Project <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/twitter/322/shibuya_e50a.png" alt="sauropod" style="height:1em;width:1em;margin:0 0.05em 0 0.1em;vertical-align:-0.1em;"/>
 
-### Apps and Packages
+CA-11 OP-E (カリオペ) は音声による画像生成を行うWebアプリケーションです。
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+## Quick Start <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/sauropod_1f995.png" alt="sauropod" style="height:1em;width:1em;margin:0 0.05em 0 0.1em;vertical-align:-0.1em;"/>
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Environment
 
-### Utilities
+![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=for-the-badge)![Node.js Badge](https://img.shields.io/badge/>=18-000?&style=for-the-badge)
 
-This turborepo has some additional tools already setup for you:
+### Set environment variables
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run build
+```shell
+cp sample.env .env
 ```
 
-### Develop
+### Boot development
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-pnpm dlx turbo login
+```shell
+  pnpm api:build
+  pnpm i
+  pnpm dev
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## License
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-pnpm dlx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+[MIT](https://mit-license.org/)
