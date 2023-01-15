@@ -23,13 +23,13 @@
   },
   "devDependencies": {
     "@ca11-ope/config": "workspace:*",
-    "prettier": "latest",
-    "turbo": "latest",
     "@commitlint/cli": "^17.4.2",
     "commitlint-config-gitmoji": "^2.2.10",
     "czg": "^1.4.1",
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.0"
+    "lint-staged": "^13.1.0",
+    "prettier": "3.0.0-alpha.4",
+    "turbo": "latest"
   },
   "lint-staged": {
     "apps/**/*.{js,ts,jsx,tsx}": [

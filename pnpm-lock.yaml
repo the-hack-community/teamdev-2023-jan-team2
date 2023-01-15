@@ -10,16 +10,16 @@ importers:
       czg: ^1.4.1
       husky: ^8.0.3
       lint-staged: ^13.1.0
-      prettier: latest
+      prettier: 3.0.0-alpha.4
       turbo: latest
     devDependencies:
-      '@ca11-ope/config': link:packages/eslint-config-custom
+      '@ca11-ope/config': link:packages/config
       '@commitlint/cli': 17.4.2
       commitlint-config-gitmoji: 2.2.10
       czg: 1.4.1
       husky: 8.0.3
       lint-staged: 13.1.0
-      prettier: 2.8.3
+      prettier: 3.0.0-alpha.4
       turbo: 1.7.0
 
   apps/web:
@@ -2933,9 +2933,9 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  /prettier/2.8.3:
-    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
-    engines: {node: '>=10.13.0'}
+  /prettier/3.0.0-alpha.4:
+    resolution: {integrity: sha512-+KeqJv4E5kaRsDRgSx9IeVygLKGHRmcoPvRJvPFp3bC1mw8opsva555gGb8TaJzUiHXoLZcus1EX+nlHPda7Pw==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
