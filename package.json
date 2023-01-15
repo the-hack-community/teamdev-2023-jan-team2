@@ -31,6 +31,14 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0"
   },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ]
+  },
   "volta": {
     "node": "18.13.0"
   },
