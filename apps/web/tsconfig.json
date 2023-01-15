@@ -1,5 +1,15 @@
 {
   "extends": "@ca11-ope/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "incremental": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
