@@ -20,7 +20,8 @@
     "api:build": "docker compose -f apps/api/compose.yaml --env-file .env.local build",
     "api:lint": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop -A",
     "api:fix": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop --server -A --fail-level E",
-    "test": "turbo run test --parallel"
+    "test": "turbo run test --parallel",
+    "storybook": "turbo run storybook"
   },
   "devDependencies": {
     "@ca11-ope/config": "workspace:*",
@@ -53,6 +54,16 @@
     "pnpm": ">=7.25",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm"
+  },
+  "pnpm": {
+    "overrides": {
+      "snapdragon": "^0.12.1",
+      "magic-string": "^0.27.0",
+      "micromatch": "^4.0.5"
+    },
+    "peerDependencyRules": {
+      "allowAny": ["vite"]
+    }
   },
   "packageManager": "pnpm@7.25.0"
 }

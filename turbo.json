@@ -16,6 +16,9 @@
         "^build"
       ],
       "outputs": []
+    },
+    "storybook": {
+      "cache": false
     }
   }
 }
