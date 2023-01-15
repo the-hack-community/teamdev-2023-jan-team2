@@ -1,5 +1,5 @@
 {
-  "name": "ca11ope",
+  "name": "ca11-ope",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -21,7 +21,7 @@
     "api:lint": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop -A"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
+    "@ca11-ope/config": "workspace:*",
     "prettier": "latest",
     "turbo": "latest",
     "@commitlint/cli": "^17.4.2",

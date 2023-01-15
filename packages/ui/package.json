@@ -10,10 +10,10 @@
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@ca11-ope/tsconfig": "workspace:*",
+    "@ca11-ope/config": "workspace:*",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
-    "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   }
 }
