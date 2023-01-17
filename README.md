@@ -28,16 +28,31 @@ CA-11 OP-E (カリオペ) は音声による画像生成を行うWebアプリケ
 ### Set environment variables
 
 ```shell
-cp sample.env .env
+cp .env.example .env.local
+touch ./apps/api/config/master.key
 ```
+作成後、.env.localのRAILS-MASTERとmaster.keyに特定の文字列を入力（特定の文字列はチーム内に聞いてください）
 
 ### Boot development
 
+front
 ```shell
   pnpm api:build
   pnpm i
   pnpm dev
 ```
+
+backend 
+```shell
+  pnpm api
+```
+起動できたらlocahost:3001へアクセス。
+
+※もし上記のコマンドを叩いて`"/rails/bin/docker-entrypoint": permission denied: unknown`のエラーが出たら
+```shell
+chmod +x ./apps/api/bin/docker-entrypoint
+```
+のコマンドを叩く
 
 ## License
 
