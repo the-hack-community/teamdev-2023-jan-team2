@@ -25,18 +25,25 @@ CA-11 OP-E (カリオペ) は音声による画像生成を行うWebアプリケ
 
 ![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=for-the-badge)![Node.js Badge](https://img.shields.io/badge/>=18-000?&style=for-the-badge)
 
-### Set environment variables
+### Initial setup
 
 ```shell
-cp sample.env .env
+cp sample.env .env.local
+# RAILS_MASTER_KEYはapps/api/config/master.keyと同じ値にする
+pnpm api:build
+pnpm i
+```
+
+#### for Mac/Linux
+```shell
+chmod +x docker-entrypoint
 ```
 
 ### Boot development
 
 ```shell
-  pnpm api:build
-  pnpm i
-  pnpm dev
+pnpm dev #front
+pnpm api #backend
 ```
 
 ## License
