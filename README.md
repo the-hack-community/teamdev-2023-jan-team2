@@ -35,6 +35,7 @@ pnpm i
 ```
 
 #### for Mac/Linux
+
 ```shell
 chmod +x docker-entrypoint
 ```
@@ -49,3 +50,6 @@ pnpm api #backend
 ## License
 
 [MIT](https://mit-license.org/)
+
+
+pnpm  commit
