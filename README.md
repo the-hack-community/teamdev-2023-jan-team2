@@ -50,6 +50,3 @@ pnpm api #backend
 ## License
 
 [MIT](https://mit-license.org/)
-
-
-pnpm  commit
