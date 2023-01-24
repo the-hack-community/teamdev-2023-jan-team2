@@ -34,7 +34,8 @@
     "postcss": "^8.4.21",
     "prettier": "3.0.0-alpha.4",
     "tailwindcss": "^3.2.4",
-    "turbo": "latest"
+    "turbo": "latest",
+    "validate-branch-name": "^1.3.0"
   },
   "lint-staged": {
     "apps/**/*.{js,ts,jsx,tsx}": [
@@ -45,6 +46,10 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "validate-branch-name": {
+    "pattern": "^(main){1}$|^(feature|fix)\/.+$",
+    "errorMsg": "ブランチ名を確認して下さい"
   },
   "volta": {
     "node": "18.13.0"
@@ -62,7 +67,9 @@
       "micromatch": "^4.0.5"
     },
     "peerDependencyRules": {
-      "allowAny": ["vite"]
+      "allowAny": [
+        "vite"
+      ]
     }
   },
   "packageManager": "pnpm@7.25.0"
