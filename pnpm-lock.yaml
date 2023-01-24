@@ -39,6 +39,7 @@ importers:
       '@ca11-ope/config': '*'
       '@ca11-ope/tsconfig': workspace:*
       '@jest/types': ^29.3.1
+      '@next/font': ^13.1.5
       '@testing-library/cypress': ^9.0.0
       '@testing-library/jest-dom': ^5.16.5
       '@types/eslint': 8.4.10
@@ -68,6 +69,7 @@ importers:
       '@ca11-ope/config': link:../../packages/config
       '@ca11-ope/tsconfig': link:../../packages/tsconfig
       '@jest/types': 29.3.1
+      '@next/font': 13.1.5
       '@testing-library/jest-dom': 5.16.5
       '@types/eslint': 8.4.10
       '@types/node': 17.0.45
@@ -2234,6 +2236,10 @@ packages:
       glob: 7.1.7
     dev: false
 
+  /@next/font/13.1.5:
+    resolution: {integrity: sha512-6M5R6yC3JkdJiqo/YJxDp6+0vDn0smXOAzl8uHt4qmDS2u53ji/19K0HM51d+5kg8xntDi+N2hw7YjaU9inkNA==}
+    dev: true
+
   /@next/swc-android-arm-eabi/13.1.2:
     resolution: {integrity: sha512-7mRz1owoGsbfIcdOJA3kk7KEwPZ+OvVT1z9DkR/yru4QdVLF69h/1SHy0vlUNQMxDRllabhxCfkoZCB34GOGAg==}
     engines: {node: '>= 10'}
@@ -2451,7 +2457,7 @@ packages:
       '@storybook/client-logger': 7.0.0-beta.28
       '@storybook/core-common': 7.0.0-beta.28
       '@storybook/csf-plugin': 7.0.0-beta.28
-      '@storybook/mdx2-csf': 1.0.0-next.4
+      '@storybook/mdx2-csf': 1.0.0-next.5
       '@storybook/node-logger': 7.0.0-beta.28
       '@storybook/preview': 7.0.0-beta.28
       '@storybook/preview-api': 7.0.0-beta.28
@@ -2613,7 +2619,7 @@ packages:
       '@storybook/core-events': 7.0.0-beta.28
       '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-beta.28
-      '@storybook/docs-mdx': 0.0.1-next.5
+      '@storybook/docs-mdx': 0.0.1-next.6
       '@storybook/global': 5.0.0
       '@storybook/node-logger': 7.0.0-beta.28
       '@storybook/preview-api': 7.0.0-beta.28
@@ -2690,8 +2696,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/docs-mdx/0.0.1-next.5:
-    resolution: {integrity: sha512-EowXFPq4TBZQguKCdU8y7EzpuSv2vSu5gy7pgF/1P5mq7LG9h8YIrerOW9DL4zfp9E0GHIWlSXR5KuFIqqKc/Q==}
+  /@storybook/docs-mdx/0.0.1-next.6:
+    resolution: {integrity: sha512-DjoSIXADmLJtdroXAjUotFiZlcZ2usWhqrS7aeOtZs0DVR0Ws5WQjnwtpDUXt8gryTSd+OZJ0cNsDcqg4JDEvQ==}
     dev: true
 
   /@storybook/docs-tools/7.0.0-beta.28:
@@ -2716,8 +2722,8 @@ packages:
     resolution: {integrity: sha512-z+Tt2D3BlWU06pXd3dFlUuyJPFG7/n7eA9KCbX5AV6HAzpNGDEV8pizOIMnW2IPgM+iXuNJthc5WBT8R17wkrg==}
     dev: true
 
-  /@storybook/mdx2-csf/1.0.0-next.4:
-    resolution: {integrity: sha512-nvRgYdpYvXsvSgCzKc4LQA1JxtJzmv47IsFAsh1rTz5FoHyK8watLU2WqX9T4w52fpFXBHx7RwGEsCRt0XgZlQ==}
+  /@storybook/mdx2-csf/1.0.0-next.5:
+    resolution: {integrity: sha512-02w0sgGZaK1agT050yCVhJ+o4rLHANWvLKWjQjeAsYbjneLC5ITt+3GDB4jRiWwJboZ8dHW1fGSK1Vg5fA34aQ==}
     dev: true
 
   /@storybook/node-logger/7.0.0-beta.28:
@@ -3075,13 +3081,13 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 16.18.11
+      '@types/node': 18.11.18
     dev: true
 
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 16.18.11
+      '@types/node': 18.11.18
     dev: true
 
   /@types/detect-port/1.3.2:
@@ -3118,7 +3124,7 @@ packages:
   /@types/express-serve-static-core/4.17.32:
     resolution: {integrity: sha512-aI5h/VOkxOF2Z1saPy0Zsxs5avets/iaiAJYznQFm5By/pamU31xWKL//epiF4OfUA2qTOc9PV6tCUjhO8wlZA==}
     dependencies:
-      '@types/node': 16.18.11
+      '@types/node': 18.11.18
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
     dev: true
@@ -3206,7 +3212,7 @@ packages:
   /@types/node-fetch/2.6.2:
     resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
     dependencies:
-      '@types/node': 16.18.11
+      '@types/node': 18.11.18
       form-data: 3.0.1
     dev: true
 
@@ -3279,7 +3285,7 @@ packages:
     resolution: {integrity: sha512-z5xyF6uh8CbjAu9760KDKsH2FcDxZ2tFCsA4HIMWE6IkiYMXfVoa+4f9KX+FN0ZLsaMw1WNG2ETLA6N+/YA+cg==}
     dependencies:
       '@types/mime': 3.0.1
-      '@types/node': 16.18.11
+      '@types/node': 18.11.18
     dev: true
 
   /@types/sinonjs__fake-timers/8.1.1:
