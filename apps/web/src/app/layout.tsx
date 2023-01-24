@@ -1,8 +1,15 @@
+import localFont from '@next/font/local'
+import Header from 'ui/components/organisms/Header'
+const zou = localFont({ src: '../assets/zou.ttf' })
+
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html>
+    <html className={zou.className}>
       <head />
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
