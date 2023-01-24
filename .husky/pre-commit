@@ -3,3 +3,4 @@
 
 pnpm api:lint
 pnpm lint-staged
+validate-branch-name
