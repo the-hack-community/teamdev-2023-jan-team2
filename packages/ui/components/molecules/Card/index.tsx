@@ -1,15 +1,24 @@
-import Image from '../../../../../apps/web/node_modules/next/image';
+import Image from "next/image";
 
 const Card = ({ variant, icon, username, img, description, caption }: Card) => {
+  const CAPTION_MAX_LENGTH = 16;
+
+  const ellipsis = (str: string, length: number ) => {
+    if (str.length < length) {
+      return str;
+    }
+    return str.substring(0, length) + '...';
+  };
+
   let bg = 'bg-orange-500';
   switch (variant) {
-    case 'primary':
+    case 'bg-yellow':
       bg = 'bg-yellow-500';
       break;
-    case 'secondary':
+    case 'bg-blue':
       bg = 'bg-blue-500';
       break;
-    case 'tertiary':
+    case 'bg-navy':
       bg = 'bg-navy-500';
       break;
     default:
@@ -17,35 +26,30 @@ const Card = ({ variant, icon, username, img, description, caption }: Card) => {
   }
 
   return (
-    <div>
-      <div className={`${bg} h-[644px] w-[471px] rounded-3xl`}>
-        <div className="flex h-[60px]">
-          <div className="pt-1.5 pl-2">
-            <Image
-              src={icon}
-              alt="icon"
-              width={48}
-              height={48}
-              className="rounded-full border-black"
-            />
-          </div>
-          <div className="ml-4 pt-3 text-2xl font-bold text-white">
-            {username}
-          </div>
-        </div>
-        <div>
+    <div className={`${bg} w-[471px] rounded-3xl`}>
+      <div className="flex h-[60px]">
+        <div className="pt-1.5 pl-2">
           <Image
-            src={img}
-            alt={description || 'image'}
-            width={471}
-            height={471}
-            fill
-            style={{ objectFit: 'cover' }}
+            src={icon}
+            alt={`${username}-icon`}
+            width={48}
+            height={48}
+            className="rounded-full border-black"
           />
         </div>
-        <div className="pt-8 pl-8 text-2xl font-bold text-white">
-          {caption}
+        <div className="ml-4 pt-3 text-2xl font-bold text-white">
+          {username}
         </div>
+      </div>
+      <Image
+        src={img}
+        alt={description || 'image'}
+        width={471}
+        height={471}
+        style={{ objectFit: 'cover' }}
+      />
+      <div className="py-8 pl-8 text-2xl font-bold text-white">
+        {ellipsis(caption, CAPTION_MAX_LENGTH)}
       </div>
     </div>
   );

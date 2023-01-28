@@ -1,5 +1,5 @@
 declare type Card = {
-  variant?: 'default' | 'primary' | 'secondary' | 'tertiary';
+  variant?: 'bg-orange' | 'bg-yellow' | 'bg-blue' | 'bg-navy';
   icon: string;
   username: string;
   img: string;
