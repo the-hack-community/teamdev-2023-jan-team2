@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Card = ({ variant, icon, username, img, description, caption }: Card) => {
+const Card = ({ bgColor, icon, username, img, description, caption }: Card) => {
   const CAPTION_MAX_LENGTH = 16;
 
   const ellipsis = (str: string, length: number ) => {
@@ -10,23 +10,8 @@ const Card = ({ variant, icon, username, img, description, caption }: Card) => {
     return str.substring(0, length) + '...';
   };
 
-  let bg = 'bg-orange-500';
-  switch (variant) {
-    case 'bg-yellow':
-      bg = 'bg-yellow-500';
-      break;
-    case 'bg-blue':
-      bg = 'bg-blue-500';
-      break;
-    case 'bg-navy':
-      bg = 'bg-navy-500';
-      break;
-    default:
-      break;
-  }
-
   return (
-    <div className={`${bg} w-[471px] rounded-3xl`}>
+    <div className={`${bgColor} w-[471px] rounded-3xl`}>
       <div className="flex h-[60px]">
         <div className="pt-1.5 pl-2">
           <Image

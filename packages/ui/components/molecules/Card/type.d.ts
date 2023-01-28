@@ -1,5 +1,5 @@
 declare type Card = {
-  variant?: 'bg-orange' | 'bg-yellow' | 'bg-blue' | 'bg-navy';
+  bgColor: 'bg-orange-500' | 'bg-yellow-500' | 'bg-blue-500' | 'bg-navy-500';
   icon: string;
   username: string;
   img: string;
