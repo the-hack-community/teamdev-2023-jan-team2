@@ -34,6 +34,7 @@
     "vite-plugin-swc-react": "^0.1.12"
   },
   "dependencies": {
+    "next": "^13.1.1",
     "react-hook-form": "^7.42.1"
   }
 }
