@@ -1,3 +1,5 @@
+'use client'
+
 import type { SubmitHandler } from 'react-hook-form'
 import { useForm } from 'react-hook-form'
 import AppLogo from 'atoms/AppLogo'
@@ -27,7 +29,7 @@ const RegisterForm = ({ onSubmit: onSubmit }: RegisterForm) => {
             メールアドレス
           </label>
           <input
-            className='px-26px mt-16px bg-navy text-gray h-[48px] w-[632px] rounded-full font-sans'
+            className='mt-16px bg-navy px-26px text-gray h-[48px] w-[632px] rounded-full font-sans'
             {...register('email', { required: true })}
           />
           {errors.email && (
@@ -41,7 +43,7 @@ const RegisterForm = ({ onSubmit: onSubmit }: RegisterForm) => {
             パスワード
           </label>
           <input
-            className='px-26px mt-16px bg-navy text-gray h-[48px] w-[632px] rounded-full font-sans'
+            className='mt-16px bg-navy px-26px text-gray h-[48px] w-[632px] rounded-full font-sans'
             type='password'
             {...register('password', { required: true })}
           />
