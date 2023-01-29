@@ -73,6 +73,7 @@ module.exports = {
         },
       },
     ],
+    'lines-around-directive': 'error',
   },
   overrides: [
     {
