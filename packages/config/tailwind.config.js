@@ -12,9 +12,11 @@ module.exports = {
         yellow: '#FFD754',
         blue: '#4E85FF',
         navy: '#190F4A',
+        gray: '#D9D9D9',
       },
       fontFamily: {
         zou: ['var(--font-zou)'],
+        sans: ['Hiragino Sans']
       },
     },
   },
