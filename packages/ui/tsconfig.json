@@ -1,5 +1,13 @@
 {
   "extends": "@ca11-ope/tsconfig/react-library.json",
   "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": "components",
+    "paths": {
+      "atoms*": ["atoms*"],
+      "molecules*": ["molecules*"],
+      "organisms*": ["organisms*"],
+    }
+  }
 }

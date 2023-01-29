@@ -20,6 +20,7 @@
     "@ca11-ope/config": "*",
     "@ca11-ope/tsconfig": "workspace:*",
     "@jest/types": "^29.3.1",
+    "@next/font": "^13.1.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/eslint": "8.4.10",
     "@types/node": "^17.0.12",
