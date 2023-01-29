@@ -1,30 +1,28 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 const Card = ({ bgColor, icon, username, img, description, caption }: Card) => {
-  const CAPTION_MAX_LENGTH = 16;
+  const CAPTION_MAX_LENGTH = 16
 
-  const ellipsis = (str: string, length: number ) => {
+  const ellipsis = (str: string, length: number) => {
     if (str.length < length) {
-      return str;
+      return str
     }
-    return str.substring(0, length) + '...';
-  };
+    return str.substring(0, length) + '...'
+  }
 
   return (
-    <div className={`${bgColor} w-[471px] rounded-3xl`}>
-      <div className="flex h-[60px]">
-        <div className="pt-1.5 pl-2">
+    <div className={`${bgColor} w-[471px] rounded-3xl font-sans`}>
+      <div className='flex h-[60px]'>
+        <div className='pt-1.5 pl-2'>
           <Image
             src={icon}
             alt={`${username}-icon`}
             width={48}
             height={48}
-            className="rounded-full border-black"
+            className='rounded-full border-black'
           />
         </div>
-        <div className="ml-4 pt-3 text-2xl font-bold text-white">
-          {username}
-        </div>
+        <div className='ml-4 pt-3 text-2xl font-bold text-white'>{username}</div>
       </div>
       <Image
         src={img}
@@ -33,11 +31,11 @@ const Card = ({ bgColor, icon, username, img, description, caption }: Card) => {
         height={471}
         style={{ objectFit: 'cover' }}
       />
-      <div className="py-8 pl-8 text-2xl font-bold text-white">
+      <div className='py-8 pl-8 text-2xl font-bold text-white'>
         {ellipsis(caption, CAPTION_MAX_LENGTH)}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card
