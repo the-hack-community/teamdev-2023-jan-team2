@@ -72,5 +72,8 @@
       ]
     }
   },
-  "packageManager": "pnpm@7.25.0"
+  "packageManager": "pnpm@7.25.0",
+  "dependencies": {
+    "next-auth": "^4.19.1"
+  }
 }
