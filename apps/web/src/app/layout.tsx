@@ -1,16 +1,19 @@
-import localFont from '@next/font/local'
+// import localFont from '@next/font/local'
+import { SessionProvider } from 'next-auth/react';
 import Header from 'ui/components/organisms/Header'
-const zou = localFont({ src: '../assets/zou.ttf' })
+// const zou = localFont({ src: '../assets/zou.ttf' })
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = ({ children ,session}: { children: React.ReactNode,session:any }) => {
   return (
-    <html className={zou.className}>
+  <SessionProvider session={session}>
+    <html className="">
       <head />
       <body>
         <Header />
         {children}
       </body>
     </html>
+    </SessionProvider>
   )
 }
 export default RootLayout
