@@ -62,8 +62,13 @@
       "micromatch": "^4.0.5"
     },
     "peerDependencyRules": {
-      "allowAny": ["vite"]
+      "allowAny": [
+        "vite"
+      ]
     }
   },
-  "packageManager": "pnpm@7.25.0"
+  "packageManager": "pnpm@7.25.0",
+  "dependencies": {
+    "next-auth": "^4.19.1"
+  }
 }
