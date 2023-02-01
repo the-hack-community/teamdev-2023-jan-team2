@@ -1,6 +1,6 @@
-
 // import localFont from '@next/font/local'
 import { SessionProvider } from 'next-auth/react';
+
 import Header from 'ui/components/organisms/Header'
 // const zou = localFont({ src: '../assets/zou.ttf' })
 
