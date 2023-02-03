@@ -1,8 +1,25 @@
 import Image from 'next/image'
 import ellipsis from '../../../libs/ellipsis'
 
-const Card = ({ bgColor, icon, username, img, description, caption }: Card) => {
+const Card = ({ size, bgColor, icon, username, img, description, caption }: Card) => {
   const CAPTION_MAX_LENGTH = 16
+
+  if (size === 'small') {
+    return (
+      <div className={`${bgColor} w-[422px] rounded-3xl`}>
+        <Image
+          src={img}
+          alt={description || 'image'}
+          width={422}
+          height={422}
+          style={{ objectFit: 'cover' }}
+        />
+        <div className='py-8 pl-8 font-sans text-2xl font-bold text-white'>
+          {ellipsis(caption, CAPTION_MAX_LENGTH)}
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={`${bgColor} w-[471px] rounded-3xl font-sans`}>
