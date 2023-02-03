@@ -1,14 +1,8 @@
 import Image from 'next/image'
+import ellipsis from '../../../libs/ellipsis'
 
 const Card = ({ bgColor, icon, username, img, description, caption }: Card) => {
   const CAPTION_MAX_LENGTH = 16
-
-  const ellipsis = (str: string, length: number) => {
-    if (str.length < length) {
-      return str
-    }
-    return str.substring(0, length) + '...'
-  }
 
   return (
     <div className={`${bgColor} w-[471px] rounded-3xl font-sans`}>
