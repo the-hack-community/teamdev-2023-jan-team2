@@ -3,23 +3,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.0'
 
-# Use main development branch of Rails
-gem 'rails', github: 'rails/rails', branch: 'main'
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.0', '>= 7.0.4.2'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.4', '>= 1.4.5'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '>= 5.0'
+gem 'puma', '~> 6.0', '>= 6.0.2'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[windows jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
-
-gem 'graphiql-rails'
-gem 'graphql'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -32,9 +29,18 @@ end
 group :development do
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
   gem 'rubocop', require: false
+  gem 'rubocop-graphql', '~> 0.19.0'
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
 
   gem 'spring-commands-rspec'
 end
+
+gem 'graphiql-rails', '~> 1.8'
+gem 'graphql', '~> 2.0', '>= 2.0.16'
+
+gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise-i18n', '~> 1.10', '>= 1.10.2'
+gem 'devise_token_auth', '~> 1.2', '>= 1.2.1'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
