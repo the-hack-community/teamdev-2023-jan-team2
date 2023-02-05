@@ -19,6 +19,9 @@
     },
     "storybook": {
       "cache": false
+    },
+    "codegen:graphql": {
+      "cache": false
     }
   }
 }

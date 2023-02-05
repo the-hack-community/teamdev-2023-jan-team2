@@ -20,16 +20,16 @@
     "api:build": "docker compose -f apps/api/compose.yaml --env-file .env.local build",
     "api:lint": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop -A",
     "api:fix": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop --server -A --fail-level E",
+    "api:gen-schema": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api rake graphql:schema:idl",
+    "api:db-reset": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api rake db:migrate:reset",
+    "codegen:graphql": "turbo run codegen:graphql",
     "test": "turbo run test --parallel",
-    "storybook": "turbo run storybook",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "storybook": "turbo run storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@ca11-ope/config": "workspace:*",
     "@commitlint/cli": "^17.4.2",
-    "@graphql-codegen/cli": "2.16.4",
-    "@graphql-codegen/typescript-operations": "^2.5.12",
     "@types/node": "^17.0.12",
     "autoprefixer": "^10.4.13",
     "commitlint-config-gitmoji": "^2.2.10",
@@ -75,8 +75,5 @@
       ]
     }
   },
-  "packageManager": "pnpm@7.25.0",
-  "dependencies": {
-    "graphql": "^16.6.0"
-  }
+  "packageManager": "pnpm@7.25.0"
 }
