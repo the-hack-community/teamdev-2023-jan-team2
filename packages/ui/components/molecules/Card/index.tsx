@@ -13,6 +13,7 @@ const Card = ({ size, bgColor, icon, username, img, description, caption }: Card
           width={422}
           height={422}
           style={{ objectFit: 'cover' }}
+          className={`${size === 'small' ? 'rounded-t-3xl' : ''} `}
         />
         <div className='py-8 pl-8 font-sans text-2xl font-bold text-white'>
           {ellipsis(caption, CAPTION_MAX_LENGTH)}
