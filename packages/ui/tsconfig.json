@@ -7,7 +7,7 @@
     "paths": {
       "atoms*": ["atoms*"],
       "molecules*": ["molecules*"],
-      "organisms*": ["organisms*"],
+      "organisms*": ["organisms*"]
     }
   }
 }
