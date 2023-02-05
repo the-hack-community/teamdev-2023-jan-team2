@@ -11,7 +11,6 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint-staged": "lint-staged",
     "commit": "czg",
     "commitlint": "commitlint",
     "prepare": "husky install",
@@ -28,6 +27,7 @@
   },
   "devDependencies": {
     "@ca11-ope/config": "workspace:*",
+    "@ca11-ope/eslint-config": "workspace:*",
     "@commitlint/cli": "^17.4.2",
     "autoprefixer": "^10.4.13",
     "commitlint-config-gitmoji": "^2.2.10",
@@ -39,20 +39,6 @@
     "tailwindcss": "^3.2.4",
     "turbo": "latest",
     "validate-branch-name": "^1.3.0"
-  },
-  "lint-staged": {
-    "apps/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "packages/ui/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
-  "validate-branch-name": {
-    "pattern": "^(main){1}$|^(feature|fix)\/.+$",
-    "errorMsg": "ブランチ名を確認して下さい"
   },
   "volta": {
     "node": "18.13.0"
@@ -74,6 +60,23 @@
         "vite"
       ]
     }
+  },
+  "validate-branch-name": {
+    "pattern": "^(main){1}$|^(feature|fix)\/.+$",
+    "errorMsg": "ブランチ名を確認して下さい"
+  },
+  "lint-staged": {
+    "apps/web/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   },
   "packageManager": "pnpm@7.25.0",
   "dependencies": {

@@ -5,14 +5,15 @@
   "types": "./index.tsx",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint *.ts*",
+    "lint": "eslint components/**/*.{js,ts,jsx,tsx} --fix",
     "test": "jest --verbose --coverage --coverageDirectory=.coverage",
     "storybook": "sb dev -p 6006"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@ca11-ope/config": "workspace:*",
+    "@ca11-ope/config": "*",
     "@ca11-ope/tsconfig": "workspace:*",
+    "@ca11-ope/eslint-config": "workspace:*",
     "@storybook/react": "7.0.0-beta.28",
     "@storybook/react-vite": "7.0.0-beta.28",
     "@testing-library/jest-dom": "^5.16.5",
