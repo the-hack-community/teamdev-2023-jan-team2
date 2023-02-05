@@ -1,0 +1,15 @@
+{
+  "name": "@ca11-ope/eslint-config",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@ca11-ope/tsconfig": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}

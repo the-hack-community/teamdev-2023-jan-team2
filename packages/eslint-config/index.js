@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
     node: true,
     jest: true,
+    es2021: true,
   },
   parserOptions: {
     ecmaVersion: 'latest',
@@ -25,9 +26,6 @@ module.exports = {
     'prettier',
   ],
   settings: {
-    next: {
-      rootDir: ['apps/*/', 'packages/*/'],
-    },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },

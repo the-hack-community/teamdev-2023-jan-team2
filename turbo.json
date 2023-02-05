@@ -6,15 +6,18 @@
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
-      "outputs": []
+      "dependsOn": [],
+      "inputs": [
+        "apps/web/**/*.{js,ts,jsx,tsx}",
+        "packages/ui/**/*.{js,ts,jsx,tsx}",
+        "package.json"
+      ]
     },
     "dev": {
       "cache": false
     },
     "test": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "outputs": []
     },
     "storybook": {

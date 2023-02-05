@@ -1,10 +1,6 @@
 {
   "name": "@ca11-ope/config",
   "version": "0.0.0",
-  "main": "index.js",
-  "files": [
-    "eslint-next.js"
-  ],
   "license": "MIT",
   "scripts": {
     "codegen:graphql": "graphql-codegen --config codegen.ts"

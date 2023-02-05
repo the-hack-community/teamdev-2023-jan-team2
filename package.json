@@ -11,7 +11,6 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint-staged": "lint-staged",
     "commit": "czg",
     "commitlint": "commitlint",
     "prepare": "husky install",
@@ -29,6 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@ca11-ope/config": "workspace:*",
+    "@ca11-ope/eslint-config": "workspace:*",
     "@commitlint/cli": "^17.4.2",
     "@types/node": "^17.0.12",
     "autoprefixer": "^10.4.13",
@@ -43,16 +43,6 @@
     "ts-node": "^10.9.1",
     "turbo": "latest",
     "typescript": "^4.9.4"
-  },
-  "lint-staged": {
-    "apps/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "packages/ui/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
   },
   "volta": {
     "node": "18.13.0"
@@ -74,6 +64,19 @@
         "vite"
       ]
     }
+  },
+  "lint-staged": {
+    "apps/web/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   },
   "packageManager": "pnpm@7.25.0"
 }
