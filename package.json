@@ -20,6 +20,9 @@
     "api:build": "docker compose -f apps/api/compose.yaml --env-file .env.local build",
     "api:lint": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop -A",
     "api:fix": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop --server -A --fail-level E",
+    "api:gen-schema": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api rake graphql:schema:idl",
+    "api:db-reset": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api rake db:migrate:reset",
+    "codegen:graphql": "turbo run codegen:graphql",
     "test": "turbo run test --parallel",
     "storybook": "turbo run storybook"
   },
