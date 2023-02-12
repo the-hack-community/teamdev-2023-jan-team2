@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Mutations::UserCreate < BaseMutation
+class Mutations::UserCreate < GraphQL::Schema::Mutation
   description 'Creates a new user'
 
   field :user, Types::UserType, null: false

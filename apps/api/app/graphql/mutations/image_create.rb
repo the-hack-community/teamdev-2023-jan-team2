@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Mutations::ImageCreate < BaseMutation
+class Mutations::ImageCreate < GraphQL::Schema::Mutation
   description 'Creates a new image'
 
   field :image, Types::ImageType, null: false
@@ -8,7 +8,7 @@ class Mutations::ImageCreate < BaseMutation
   argument :image_input, Types::ImageInputType, required: true
 
   def resolve(image_input:)
-    uri = URI('https://ff0f-240d-1e-461-5600-81f5-68f6-8753-2e48.jp.ngrok.io/sdapi/v1/txt2img')
+    uri = URI("#{ENV.fetch('SD_BASE_URL', nil)}/sdapi/v1/txt2img")
 
     request = Net::HTTP::Post.new(uri)
     request['Content-Type'] = 'application/json'
@@ -23,7 +23,9 @@ class Mutations::ImageCreate < BaseMutation
     end
 
     images = JSON.parse(response.body)['images'][0]
-    image = ::Image.new(**image_input.to_h.merge(image_src: images))
+    image = ::Image.new(**image_input
+                            .to_h.merge(image_src: images)
+                            .to_h.merge(id: Image.last.id + 1))
 
     raise GraphQL::ExecutionError.new 'Error creating image', extensions: image.errors.to_hash unless image.save
 

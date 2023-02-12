@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Mutations::ImageDelete < BaseMutation
+class Mutations::ImageDelete < GraphQL::Schema::Mutation
   description 'Deletes a image by ID'
 
   field :image, Types::ImageType, null: false

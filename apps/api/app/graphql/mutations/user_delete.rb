@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Mutations::UserDelete < BaseMutation
+class Mutations::UserDelete < GraphQL::Schema::Mutation
   description 'Deletes a user by ID'
 
   field :user, Types::UserType, null: false

@@ -19,6 +19,7 @@ services:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+      - SD_BASE_URL=${SD_BASE_URL}
   db:
     container_name: 'rails-db'
     image: postgres:15-alpine

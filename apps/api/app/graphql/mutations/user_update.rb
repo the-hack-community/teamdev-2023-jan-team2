@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Mutations::UserUpdate < BaseMutation
+class Mutations::UserUpdate < GraphQL::Schema::Mutation
   description 'Updates a user by id'
 
   field :user, Types::UserType, null: false

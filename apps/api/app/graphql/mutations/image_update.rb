@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Mutations::ImageUpdate < BaseMutation
+class Mutations::ImageUpdate < GraphQL::Schema::Mutation
   description 'Updates a image by id'
 
   field :image, Types::ImageType, null: false
