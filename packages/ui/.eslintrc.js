@@ -1,7 +1,5 @@
+/** @type {import("eslint").Linter.BaseConfig} */
 module.exports = {
-  ...require('@ca11-ope/config/eslint-next.js'),
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: './tsconfig.json',
-  },
+  root: true,
+  extends: ['@ca11-ope'],
 }

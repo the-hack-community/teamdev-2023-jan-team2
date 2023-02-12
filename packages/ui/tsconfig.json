@@ -1,5 +1,5 @@
 {
-  "extends": "@ca11-ope/tsconfig/react-library.json",
+  "extends": "@ca11-ope/tsconfig/nextjs.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
@@ -7,7 +7,7 @@
     "paths": {
       "atoms*": ["atoms*"],
       "molecules*": ["molecules*"],
-      "organisms*": ["organisms*"],
+      "organisms*": ["organisms*"]
     }
   }
 }

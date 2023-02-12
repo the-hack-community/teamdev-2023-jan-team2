@@ -5,7 +5,7 @@
     "paths": {
       "atoms*": ["../../../packages/ui/components/atoms*"],
       "molecules*": ["../../../packages/ui/components/molecules*"],
-      "organisms*": ["../../../packages/ui/components/organisms*"],
+      "organisms*": ["../../../packages/ui/components/organisms*"]
     },
     "incremental": true,
     "jsx": "preserve",
@@ -15,13 +15,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

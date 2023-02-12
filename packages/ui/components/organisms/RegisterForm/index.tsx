@@ -5,7 +5,27 @@ import { useForm } from 'react-hook-form'
 import AppLogo from 'atoms/AppLogo'
 import Button from 'atoms/Button'
 
-const RegisterForm = ({ onSubmit: onSubmit }: RegisterForm) => {
+async function postUser(email: string, password: string) {
+  const param = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+  }
+  const res = await fetch('https://jsonplaceholder.typicode.com/users/', param)
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  return res.json()
+}
+
+// 同コンポーネント内から呼び出しています。
+// const RegisterForm = ({ onSubmit}: RegisterForm) => {
+const RegisterForm = () => {
   const {
     register,
     handleSubmit,
@@ -13,7 +33,8 @@ const RegisterForm = ({ onSubmit: onSubmit }: RegisterForm) => {
   } = useForm<Inputs>()
 
   const submitHandler: SubmitHandler<Inputs> = (data) => {
-    onSubmit(data.email, data.password)
+    // onSubmit(data.email, data.password);
+    postUser(data.email, data.password)
   }
 
   return (

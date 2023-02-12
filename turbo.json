@@ -3,21 +3,28 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["GRAPHQL_ENDPOINT", "BASE_URL", "NEXTAUTH_SECRET"],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
-      "outputs": []
+      "dependsOn": [],
+      "inputs": [
+        "apps/web/**/*.{js,ts,jsx,tsx}",
+        "packages/ui/**/*.{js,ts,jsx,tsx}",
+        "package.json"
+      ]
     },
     "dev": {
       "cache": false
     },
     "test": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "outputs": []
     },
     "storybook": {
+      "cache": false
+    },
+    "codegen:graphql": {
       "cache": false
     }
   }

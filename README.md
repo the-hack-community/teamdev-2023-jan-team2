@@ -28,15 +28,16 @@ CA-11 OP-E (カリオペ) は音声による画像生成を行うWebアプリケ
 ### Initial setup
 
 ```shell
-cp sample.env .env.local
+cp .env.example .env.local
 # RAILS_MASTER_KEYはapps/api/config/master.keyと同じ値にする
 pnpm api:build
 pnpm i
 ```
 
 #### for Mac/Linux
+
 ```shell
-chmod +x docker-entrypoint
+chmod +x apps/api/bin/docker-entrypoint
 ```
 
 ### Boot development

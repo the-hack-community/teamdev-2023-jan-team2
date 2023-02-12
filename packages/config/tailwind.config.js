@@ -16,7 +16,7 @@ module.exports = {
       },
       fontFamily: {
         zou: ['var(--font-zou)'],
-        sans: ['Hiragino Sans']
+        sans: ['Hiragino Sans'],
       },
     },
   },

@@ -64,7 +64,7 @@ module.exports = {
     useEmoji: true,
     emojiAlign: 'left',
     themeColorCode: '38;5;208', // 38;5;${color_code: 0 ~ 255} https://www.ditig.com/256-colors-cheat-sheet
-    scopes: ['api','front'],
+    scopes: ['api', 'front'],
     allowCustomScopes: false,
     allowEmptyScopes: true,
     customScopesAlign: 'bottom',
