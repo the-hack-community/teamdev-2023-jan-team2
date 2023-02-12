@@ -3,6 +3,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["GRAPHQL_ENDPOINT", "BASE_URL", "NEXTAUTH_SECRET"],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {

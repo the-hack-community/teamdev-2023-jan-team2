@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@ca11-ope/config": "*",
-    "@ca11-ope/tsconfig": "workspace:*",
+    "@ca11-ope/config": "workspace:*",
     "@ca11-ope/eslint-config": "workspace:*",
+    "@ca11-ope/tsconfig": "workspace:*",
     "@jest/types": "^29.3.1",
     "@next/font": "^13.1.5",
     "@testing-library/jest-dom": "^5.16.5",

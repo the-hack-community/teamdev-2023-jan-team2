@@ -1,20 +1,20 @@
+import localFont from '@next/font/local'
+import { getServerSession } from 'next-auth/next'
+import Header from 'organisms/Header'
+import { authOptions } from '../pages/api/auth/[...nextauth]'
 
-// import localFont from '@next/font/local'
-import { SessionProvider } from 'next-auth/react';
-import Header from 'ui/components/organisms/Header'
-// const zou = localFont({ src: '../assets/zou.ttf' })
+const zou = localFont({ src: '../assets/zou.ttf' })
 
-const RootLayout = ({ children ,session}: { children: React.ReactNode,session:any }) => {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+  const session = await getServerSession(authOptions)
   return (
-  <SessionProvider session={session}>
-    <html className="">
+    <html lang='en'>
       <head />
-      <body>
-        <Header />
+      <body className={zou.className}>
+        <Header session={session} />
         {children}
       </body>
     </html>
-    </SessionProvider>
   )
 }
 export default RootLayout

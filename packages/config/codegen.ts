@@ -5,6 +5,11 @@ const config: CodegenConfig = {
   generates: {
     'schema.ts': {
       plugins: ['typescript', 'typescript-operations'],
+      config: {
+        scalars: {
+          ISO8601DateTime: 'string',
+        },
+      },
     },
   },
 }

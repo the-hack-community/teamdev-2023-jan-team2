@@ -1,50 +1,50 @@
-import NextAuth from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import type { UserInput } from '@ca11-ope/config/schema'
+import type { NextAuthOptions } from 'next-auth'
+import NextAuth from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
-//メアドPW構築中
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "Credentials",
+      type: 'credentials',
+      name: 'Credentials',
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "xxx@gmail.com" },
-        password: { label: "Password", type: "password" },
+        username: { label: 'Username', type: 'text' },
+        password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials, req) {
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-          method: "POST",
-          body: JSON.stringify(credentials),
-          headers: { "Content-Type": "application/json" },
-        });
+      async authorize(credentials) {
+        if (!credentials) return null
+        const authResponse = await fetch(process.env.GRAPHQL_ENDPOINT ?? '', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query: `{userByCredential(email:"${credentials.username}",password:"${credentials.password}"){id username email avatarUrl biography}}`,
+          }),
+        })
 
-        if (response.statusText === "OK") {
-          return response.json();
+        const result = await authResponse.json()
+        const userData: UserInput = result.data.userByCredential
+
+        const authorizedUser = {
+          id: String(userData.id),
+          name: userData.username,
+          email: userData.email,
+          image: userData.avatarUrl,
+        }
+
+        if (authorizedUser) {
+          // Any object returned will be saved in `user` property of the JWT
+          return authorizedUser
         } else {
-          return null;
+          // If you return null then an error will be displayed advising the user to check their details.
+          return null
           // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
       },
     }),
   ],
-  // 以下は未実装
-  // secret: process.env.SECRET,
-  // session: {
-  //   jwt: true,
-  // },
-  pages: {
-    // ここはログインページを示す
-    // signIn: "/signup",
-  },
-  // callbacks: {
-  //   async session(session) {
-  //     return session;
-  //   },
-  //   async jwt(token) {
-  //     return token;
-  //   },
-  //   redirect() {
-  //     return null;
-  //   },
-  // },
-  // debug: false,
-});
+}
+
+export default NextAuth(authOptions)

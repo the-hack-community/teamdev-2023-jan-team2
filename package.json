@@ -7,8 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "build": "dotenv -e .env.local -- turbo run build",
+    "dev": "dotenv -e .env.local -- turbo dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "commit": "czg",
@@ -21,6 +21,7 @@
     "api:fix": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api bundle exec rubocop --server -A --fail-level E",
     "api:gen-schema": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api rake graphql:schema:idl",
     "api:db-reset": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api rake db:migrate:reset",
+    "api:db-seed": "docker compose -f apps/api/compose.yaml --env-file .env.local run -T --rm api rake db:seed",
     "codegen:graphql": "turbo run codegen:graphql",
     "test": "turbo run test --parallel",
     "storybook": "turbo run storybook"
@@ -32,6 +33,7 @@
     "autoprefixer": "^10.4.13",
     "commitlint-config-gitmoji": "^2.2.10",
     "czg": "^1.4.1",
+    "dotenv-cli": "^7.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "postcss": "^8.4.21",
@@ -62,7 +64,7 @@
     }
   },
   "validate-branch-name": {
-    "pattern": "^(main){1}$|^(feature|fix)\/.+$",
+    "pattern": "^(main){1}$|^(feature|fix)/.+$",
     "errorMsg": "ブランチ名を確認して下さい"
   },
   "lint-staged": {
