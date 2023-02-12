@@ -6,7 +6,7 @@ const MyProfileSection = ({ user }: MyProfileSection) => {
   let cardBackgroundColor: 'bg-orange' | 'bg-yellow' | 'bg-blue' | 'bg-navy' = 'bg-orange'
 
   return (
-    <section className='bg-yellow mx-auto mt-12 w-[951px] rounded-3xl pb-32'>
+    <section className='bg-yellow mx-auto w-[951px] rounded-3xl pb-32'>
       <div className='flex w-[744px] pt-8 pl-8'>
         <Image
           src={user.icon}
