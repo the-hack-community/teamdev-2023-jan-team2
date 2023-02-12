@@ -2,6 +2,7 @@ import localFont from '@next/font/local'
 import { getServerSession } from 'next-auth/next'
 import Header from 'organisms/Header'
 import { authOptions } from '../pages/api/auth/[...nextauth]'
+import 'styles/globals.css'
 
 const zou = localFont({ src: '../assets/zou.ttf' })
 
