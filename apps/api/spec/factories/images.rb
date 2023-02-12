@@ -14,5 +14,6 @@ FactoryBot.define do
     height { 1 }
     width { 1 }
     clip_skip { 1 }
+    image_src { 'MyString' }
   end
 end
