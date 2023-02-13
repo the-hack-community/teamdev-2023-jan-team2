@@ -64,6 +64,7 @@ const RegisterForm = () => {
               </label>
               <input
                 className='mt-16px bg-navy px-26px text-gray h-[48px] w-[632px] rounded-full font-sans'
+                autoComplete='username'
                 {...register('email', { required: true })}
               />
               {errors.email && (
@@ -78,6 +79,7 @@ const RegisterForm = () => {
               </label>
               <input
                 className='mt-16px bg-navy px-26px text-gray h-[48px] w-[632px] rounded-full font-sans'
+                autoComplete='current-password'
                 type='password'
                 {...register('password', { required: true })}
               />
@@ -107,6 +109,7 @@ const RegisterForm = () => {
             </label>
             <input
               className='mt-16px bg-navy px-26px text-gray h-[48px] w-[632px] rounded-full font-sans'
+              autoComplete='username'
               {...register('username', { required: true })}
             />
             {errors.username && (
@@ -121,6 +124,7 @@ const RegisterForm = () => {
             </label>
             <input
               className='mt-16px bg-navy px-26px text-gray h-[48px] w-[632px] rounded-full font-sans'
+              autoComplete='username'
               {...register('email', { required: true })}
             />
             {errors.email && (
@@ -135,6 +139,7 @@ const RegisterForm = () => {
             </label>
             <input
               className='mt-16px bg-navy px-26px text-gray h-[48px] w-[632px] rounded-full font-sans'
+              autoComplete='current-password'
               type='password'
               {...register('password', { required: true })}
             />

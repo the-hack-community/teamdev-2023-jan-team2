@@ -1,7 +1,10 @@
 import type { Session } from 'next-auth/core/types'
 import AppLogo from 'atoms/AppLogo'
 import AppLogoForAccountPage from 'atoms/AppLogoForAccountPage'
+import LinkedComponent from 'molecules/LinkedComponent'
 import LoginButton from 'molecules/LoginButton'
+import LoginIcon from 'molecules/LoginIcon'
+import LogoutButton from 'molecules/LogoutButton'
 import ProfileComponentSwitcher from 'molecules/ProfileComponentSwitcher'
 
 const Header = ({ session }: { session: Session | null }) => {
@@ -9,30 +12,34 @@ const Header = ({ session }: { session: Session | null }) => {
     <div className='fixed w-screen'>
       <ProfileComponentSwitcher
         profileComponent={
-          <div className='pl-4 pt-4'>
-            <AppLogoForAccountPage
-              key='app-logo-for-account-page'
-              width={310}
-              height={46}
-            />
+          <div className='relative z-10 flex justify-between bg-transparent'>
+            <LinkedComponent url='/'>
+              <div className='pl-4 pt-4'>
+                <AppLogoForAccountPage
+                  key='app-logo-for-account-page'
+                  width={310}
+                  height={46}
+                />
+              </div>
+            </LinkedComponent>
+            <div className='pt-24px pr-38px'>
+              <LogoutButton />
+            </div>
           </div>
         }
         otherComponent={
           <div className='relative z-10 flex justify-between bg-transparent'>
-            <div className='pl-32px pt-37px w-fit'>
-              <AppLogo
-                key='app-logo'
-                width={433}
-                height={78}
-              />
-            </div>
+            <LinkedComponent url='/'>
+              <div className='pl-32px pt-37px w-fit'>
+                <AppLogo
+                  key='app-logo'
+                  width={433}
+                  height={78}
+                />
+              </div>
+            </LinkedComponent>
             <div className='pt-24px pr-38px'>
-              {session ? (
-                // TODO: ユーザアイコンを表示する
-                <div>ログインOK</div>
-              ) : (
-                <LoginButton />
-              )}
+              {session ? <LoginIcon session={session} /> : <LoginButton />}
             </div>
           </div>
         }
