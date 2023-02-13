@@ -31,10 +31,7 @@ const Header = ({ session }: { session: Session | null }) => {
                 // TODO: ユーザアイコンを表示する
                 <div>ログインOK</div>
               ) : (
-                <LoginButton
-                  username='test@example.com'
-                  password='password'
-                />
+                <LoginButton />
               )}
             </div>
           </div>

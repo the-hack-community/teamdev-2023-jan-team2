@@ -1,8 +1,9 @@
 declare type RegisterForm = {
-  onSubmit: (email: string, password: string) => void
+  onSubmit: (username: string, email: string, password: string) => void
 }
 
 declare type Inputs = {
+  username?: string
   email: string
   password: string
 }
