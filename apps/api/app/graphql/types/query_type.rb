@@ -4,15 +4,23 @@ class Types::QueryType < Types::BaseObject
 
   field :all_users, [Types::UserType], null: false, description: 'List all users'
 
-  field :user_by_id, Types::UserType, null: false, description: 'Search by User ID' do
+  field :all_images, [Types::ImageType], null: false, description: 'List all images' do
+    argument :order, String, required: false
+  end
+
+  field :user_by_id, Types::UserType, null: false, description: 'Search User by ID' do
+    argument :id, ID, required: true
+  end
+
+  field :user_by_email, Types::UserType, null: false, description: 'Search User by Email' do
+    argument :email, String
+  end
+
+  field :image_by_id, Types::ImageType, null: false, description: 'Search Image by ID' do
     argument :id, ID
   end
 
-  field :image_by_id, Types::ImageType, null: false, description: 'Search by Image ID' do
-    argument :id, ID
-  end
-
-  field :images_by_keyword, [Types::ImageType], null: false, description: 'Search by Image Keyword' do
+  field :images_by_keyword, [Types::ImageType], null: false, description: 'Search Images by Keyword' do
     argument :keyword, String, required: true
   end
 
@@ -25,8 +33,19 @@ class Types::QueryType < Types::BaseObject
     User.all
   end
 
+  def all_images(order: nil)
+    images = Image.all
+    images = images.order(created_at: :desc) if order == 'newest'
+    images = images.order(created_at: :asc) if order == 'oldest'
+    images
+  end
+
   def user_by_id(id:)
     User.find_by(id:)
+  end
+
+  def user_by_email(email:)
+    User.find_by(email:)
   end
 
   def image_by_id(id:)
