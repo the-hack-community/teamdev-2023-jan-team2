@@ -1,6 +1,6 @@
 import type { ImageInput } from '@ca11-ope/config/schema'
 
-const getSingleImage = async (id: number) => {
+const getSingleImageById = async (id: number) => {
   const response = await fetch(`${process.env.BASE_URL}/api/image/${id}`, {
     method: 'POST',
     body: JSON.stringify({
@@ -10,7 +10,7 @@ const getSingleImage = async (id: number) => {
   if (!response.ok) return null
   const result = await response.json()
   const ImageInput: ImageInput = result.imageById
-  return ImageInput.imageSrc
+  return ImageInput
 }
 
-export default getSingleImage
+export default getSingleImageById
