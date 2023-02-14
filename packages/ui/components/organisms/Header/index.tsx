@@ -1,6 +1,7 @@
 import type { Session } from 'next-auth/core/types'
 import AppLogo from 'atoms/AppLogo'
 import AppLogoForAccountPage from 'atoms/AppLogoForAccountPage'
+import Button from 'atoms/Button'
 import LinkedComponent from 'molecules/LinkedComponent'
 import LoginButton from 'molecules/LoginButton'
 import LoginIcon from 'molecules/LoginIcon'
@@ -39,7 +40,16 @@ const Header = ({ session }: { session: Session | null }) => {
               </div>
             </LinkedComponent>
             <div className='pt-24px pr-38px'>
-              {session ? <LoginIcon session={session} /> : <LoginButton />}
+              {session ? (
+                <div className='flex items-center gap-4'>
+                  <LinkedComponent url='/upload'>
+                    <Button title='トウコウスル' />
+                  </LinkedComponent>
+                  <LoginIcon session={session} />
+                </div>
+              ) : (
+                <LoginButton />
+              )}
             </div>
           </div>
         }
