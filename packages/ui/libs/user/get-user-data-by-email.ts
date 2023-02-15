@@ -1,4 +1,4 @@
-const getUserImageIdsByEmail = async (email: string, options: string) => {
+const getUserDataByEmail = async (email: string, options: string) => {
   const response = await fetch(`${process.env.BASE_URL}/api/user/email`, {
     headers: {
       'Content-Type': 'application/json',
@@ -14,4 +14,4 @@ const getUserImageIdsByEmail = async (email: string, options: string) => {
   return result.userByEmail
 }
 
-export default getUserImageIdsByEmail
+export default getUserDataByEmail
