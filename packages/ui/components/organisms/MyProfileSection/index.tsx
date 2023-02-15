@@ -37,7 +37,7 @@ const MyProfileSection = ({ user }: MyProfileSection) => {
                   icon=''
                   bgColor={cardBackgroundColor}
                   username=''
-                  img={post.image}
+                  img={`data:image/png;base64,${post.image}`}
                   description=''
                   caption={post.caption}
                 />
