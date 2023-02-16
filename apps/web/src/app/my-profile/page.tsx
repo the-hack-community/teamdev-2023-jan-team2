@@ -48,7 +48,7 @@ const MyProfilePage = async () => {
   }
 
   return (
-    <div className='bg-orange h-screen pt-[120px]'>
+    <div className='bg-orange pt-[120px]'>
       <MyProfileSection user={userData.user} />
     </div>
   )
