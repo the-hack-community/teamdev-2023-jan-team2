@@ -10,7 +10,7 @@ import ProfileComponentSwitcher from 'molecules/ProfileComponentSwitcher'
 
 const Header = ({ session }: { session: Session | null }) => {
   return (
-    <div className='fixed w-screen'>
+    <div className='fixed z-50 w-screen'>
       <ProfileComponentSwitcher
         profileComponent={
           <div className='relative z-10 flex justify-between bg-transparent'>
