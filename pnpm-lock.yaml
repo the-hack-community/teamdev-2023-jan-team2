@@ -174,6 +174,7 @@ importers:
       react-dom: 18.2.0
       react-hook-form: ^7.42.1
       react-speech-recognition: ^3.10.0
+      regenerator-runtime: ^0.13.11
       require-from-string: ^2.0.2
       storybook: 7.0.0-beta.28
       ts-jest: ^29.0.5
@@ -183,7 +184,6 @@ importers:
     dependencies:
       next: 13.1.2_pjwopsidmaokadturxaafygjp4
       react-hook-form: 7.42.1_react@18.2.0
-      react-speech-recognition: 3.10.0_react@18.2.0
     devDependencies:
       '@babel/core': 7.20.12
       '@ca11-ope/config': link:../config
@@ -203,6 +203,8 @@ importers:
       jest-environment-jsdom: 29.3.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-speech-recognition: 3.10.0_react@18.2.0
+      regenerator-runtime: 0.13.11
       require-from-string: 2.0.2
       storybook: 7.0.0-beta.28
       ts-jest: 29.0.5_b6ud3wjfzxmze5tmlpgpdpo43e
@@ -10461,7 +10463,7 @@ packages:
       react: '>=16.8.0'
     dependencies:
       react: 18.2.0
-    dev: false
+    dev: true
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
