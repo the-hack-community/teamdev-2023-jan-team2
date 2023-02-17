@@ -45,6 +45,8 @@ Style/GlobalVars:
   Enabled: true
 Style/ClassVars:
   Enabled: true
+Layout/EndOfLine:
+  EnforcedStyle: lf
 Lint/MissingSuper:
   Enabled: true
 Lint/SymbolConversion:
