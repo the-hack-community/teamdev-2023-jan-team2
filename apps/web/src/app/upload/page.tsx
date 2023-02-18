@@ -12,8 +12,6 @@ const UploadPage = async () => {
   const userId = await getUserDataByEmail(session.user?.email ?? '', 'id').then(
     (response) => response.id,
   )
-  console.log(userId)
-
   return (
     <div className='bg-blue relative min-h-screen pt-48'>
       <div className='w-full '>

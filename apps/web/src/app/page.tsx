@@ -9,7 +9,7 @@ const App = () => {
         <Image
           src={hero}
           alt='hero'
-          className='absolute -z-10 -mt-24 max-h-screen'
+          className='absolute -z-10 max-h-[500px]'
           fill
           style={{ objectFit: 'cover' }}
         />
