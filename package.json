@@ -29,25 +29,25 @@
   "devDependencies": {
     "@ca11-ope/config": "workspace:*",
     "@ca11-ope/eslint-config": "workspace:*",
-    "@commitlint/cli": "^17.4.2",
+    "@commitlint/cli": "^17.4.4",
     "autoprefixer": "^10.4.13",
-    "commitlint-config-gitmoji": "^2.2.10",
+    "commitlint-config-gitmoji": "^2.3.1",
     "czg": "^1.4.1",
     "dotenv-cli": "^7.0.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^13.1.2",
     "postcss": "^8.4.21",
     "prettier": "3.0.0-alpha.4",
-    "tailwindcss": "^3.2.4",
+    "tailwindcss": "^3.2.7",
     "turbo": "latest",
     "validate-branch-name": "^1.3.0"
   },
   "volta": {
-    "node": "18.13.0"
+    "node": "18.14.1"
   },
   "engines": {
-    "node": ">=18.13.0",
-    "pnpm": ">=7.25",
+    "node": ">=18.14.1",
+    "pnpm": ">=7.27",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm"
   },
@@ -80,8 +80,8 @@
       "prettier --write"
     ]
   },
-  "packageManager": "pnpm@7.25.0",
+  "packageManager": "pnpm@7.27.1",
   "dependencies": {
-    "next-auth": "^4.19.1"
+    "next-auth": "^4.19.2"
   }
 }
