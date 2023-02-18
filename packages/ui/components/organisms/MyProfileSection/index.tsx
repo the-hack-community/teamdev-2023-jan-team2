@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import Card from 'molecules/Card'
 
 const MyProfileSection = ({ user }: MyProfileSection) => {
@@ -13,7 +12,7 @@ const MyProfileSection = ({ user }: MyProfileSection) => {
           alt={`${user.name}-icon`}
           width={227}
           height={227}
-          className='h-[227px] w-[227px] rounded-full border-black'
+          className='border-blue h-[227px] w-[227px] rounded-full border-8 bg-white'
         />
         <div className='pl-8 pt-8 font-sans font-black '>
           <div className='text-left text-2xl font-bold'>{user.name}</div>
@@ -29,19 +28,17 @@ const MyProfileSection = ({ user }: MyProfileSection) => {
             index % 3 === 1 ? (cardBackgroundColor = 'bg-navy') : 'bg-orange'
             index % 3 === 2 ? (cardBackgroundColor = 'bg-blue') : 'bg-orange'
             return (
-              <Link
-                href={post.url}
-                key={index}>
-                <Card
-                  size='small'
-                  icon=''
-                  bgColor={cardBackgroundColor}
-                  username=''
-                  img={`data:image/png;base64,${post.image}`}
-                  description=''
-                  caption={post.caption}
-                />
-              </Link>
+              <Card
+                key={index}
+                size='small'
+                icon=''
+                bgColor={cardBackgroundColor}
+                username=''
+                img={`data:image/png;base64,${post.image}`}
+                description=''
+                caption={post.caption}
+                removeLink={post.url}
+              />
             )
           })}
       </div>

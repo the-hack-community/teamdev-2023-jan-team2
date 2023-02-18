@@ -6,4 +6,5 @@ declare type Card = {
   img: string
   description?: string
   caption: string
+  removeLink: string
 }

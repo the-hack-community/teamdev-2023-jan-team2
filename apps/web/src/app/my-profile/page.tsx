@@ -25,7 +25,7 @@ const MyProfilePage = async () => {
       },
       body: JSON.stringify({
         id: image.id,
-        options: 'imageSrc description',
+        options: 'id imageSrc description',
       }),
     }).then((response) => response.json())
     imagesArray.push(result.imageById)
@@ -40,7 +40,7 @@ const MyProfilePage = async () => {
       posts: imagesArray.map((image) => {
         return {
           image: image.imageSrc,
-          url: 'https://google.com',
+          url: `/api/image/delete/${image.id}`,
           caption: image.description,
         }
       }),
