@@ -24,8 +24,7 @@ class Mutations::ImageCreate < GraphQL::Schema::Mutation
 
     images = JSON.parse(response.body)['images'][0]
     image = ::Image.new(**image_input
-                            .to_h.merge(image_src: images)
-                            .to_h.merge(id: Image.last.id + 1))
+                            .to_h.merge(image_src: images))
 
     raise GraphQL::ExecutionError.new 'Error creating image', extensions: image.errors.to_hash unless image.save
 
